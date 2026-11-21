@@ -34,79 +34,60 @@ export type Testimonial = {
   kind: 'provided' | 'illustrative' | 'approved' | 'message';
 };
 
-// Relatos confirmados e mensagens editoriais são identificados separadamente.
-export const testimonials: readonly (Testimonial & { kind: 'approved' | 'message' })[] = [
+// Em 21/11/2026, o responsável confirmou que são doadores reais e aprovaram os textos.
+// Confirmação declarada nesta conversa, sem auditoria independente.
+export const testimonials: readonly (Testimonial & { kind: 'approved' })[] = [
   { id: 'roberto-costa', ...site.testimonial, kind: 'approved' },
-  ...[
-    { id: 'mensagem-roupas', role: 'Roupas que acolhem', text: 'Roupas em bom estado podem ganhar um novo destino. Separar o que já não é usado é uma forma simples de começar a ajudar.' },
-    { id: 'mensagem-generosidade', role: 'Generosidade no dia a dia', text: 'Uma pequena contribuição pode se somar a outras. A solidariedade começa quando a vontade de ajudar encontra espaço na rotina.' },
-    { id: 'mensagem-brinquedos', role: 'Cuidado com a infância', text: 'Brinquedos em bom estado e fraldas estão entre as formas de contribuir. Escolher os itens com atenção também é um gesto de carinho.' },
-    { id: 'mensagem-armario', role: 'Um novo destino', text: 'Organizar o armário pode ser o começo de uma boa ação. Vale olhar para cada peça e pensar em como ela ainda pode ser útil.' },
-    { id: 'mensagem-alimentos', role: 'Alimentos para compartilhar', text: 'Cestas básicas e alimentos não perecíveis fazem parte das doações recebidas. Antes de entregar, confira a validade e as condições da embalagem.' },
-    { id: 'mensagem-familia', role: 'Solidariedade em família', text: 'Conversar sobre doação em casa é uma oportunidade de cultivar o cuidado com o próximo. Pequenos gestos podem fazer parte dessa conversa.' },
-    { id: 'mensagem-respeito', role: 'Respeito em cada gesto', text: 'Toda pessoa merece dignidade e acolhimento. A doação é uma maneira de aproximar a generosidade de quem ajuda das necessidades da comunidade.' },
-    { id: 'mensagem-carinho', role: 'Atenção aos detalhes', text: 'Separar uma doação com carinho também significa conferir o estado dos itens. Quem recebe merece o mesmo cuidado que teríamos com alguém de casa.' },
-    { id: 'mensagem-comeco', role: 'Um primeiro passo', text: 'Não é preciso esperar uma ocasião especial para ajudar. Roupas, alimentos, brinquedos e produtos de higiene são possibilidades para começar.' },
-    { id: 'mensagem-higiene', role: 'Cuidado e dignidade', text: 'Produtos de higiene pessoal fazem parte do cuidado diário. Lembrar deles na hora de doar também é olhar com atenção para necessidades essenciais.' },
-    { id: 'mensagem-comunidade', role: 'Laços com a comunidade', text: 'Compartilhar um pouco do que temos é uma forma de participar da comunidade. Cada pessoa pode encontrar um jeito de contribuir.' },
-    { id: 'mensagem-organizacao', role: 'Doar com cuidado', text: 'Organize os itens e conte à equipe o que deseja doar. Uma conversa pelos canais oficiais ajuda a combinar os próximos passos com clareza.' },
-    { id: 'mensagem-corrente', role: 'Uma corrente de esperança', text: 'Cada gesto pode ser um começo. Unidos pelo laço da caridade, seguimos conectando generosidade, cuidado e esperança.' },
-  ].map(message => ({ ...message, name: site.brand, kind: 'message' as const })),
-];
-
-// Rascunhos ilustrativos: não são doadores ou relatos comprovados.
-// Não são importados pela página pública; servem à prévia interna e aos testes.
-export const testimonialDrafts: readonly (Testimonial & { kind: 'illustrative' })[] = [
   {
-    id: 'juan-lima-exemplo', name: 'Juan Lima', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'juan-lima', name: 'Juan Lima', role: 'Doador', kind: 'approved',
     text: 'Separei roupas em bom estado para doar. É um jeito simples de colocar o que já temos a serviço de quem precisa.',
   },
   {
-    id: 'anne-beatriz-exemplo', name: 'Anne Beatriz', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'anne-beatriz', name: 'Anne Beatriz', role: 'Doador', kind: 'approved',
     text: 'Uma pequena contribuição pode fazer parte de algo maior. Gosto da ideia de transformar generosidade em cuidado com a nossa comunidade.',
   },
   {
-    id: 'andressa-exemplo', name: 'Andressa', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'andressa', name: 'Andressa', role: 'Doador', kind: 'approved',
     text: 'Brinquedos, roupas e itens de higiene podem ganhar um novo destino. Quando a gente compartilha, abre espaço para mais cuidado e esperança.',
   },
   {
-    id: 'mariana-alves-exemplo', name: 'Mariana Alves', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'mariana-alves', name: 'Mariana Alves', role: 'Doador', kind: 'approved',
     text: 'Na hora de organizar o armário, pensei em quem poderia aproveitar aquelas peças. Doar também é enxergar novas possibilidades no que já temos.',
   },
   {
-    id: 'pedro-henrique-exemplo', name: 'Pedro Henrique', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'pedro-henrique', name: 'Pedro Henrique', role: 'Doador', kind: 'approved',
     text: 'Nem sempre a gente consegue fazer muito, mas sempre pode começar com alguma coisa. Um alimento separado com carinho já é um primeiro passo.',
   },
   {
-    id: 'camila-santos-exemplo', name: 'Camila Santos', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'camila-santos', name: 'Camila Santos', role: 'Doador', kind: 'approved',
     text: 'Escolher brinquedos em bom estado para compartilhar é uma forma bonita de falar sobre generosidade em casa. O cuidado começa nos pequenos detalhes.',
   },
   {
-    id: 'lucas-oliveira-exemplo', name: 'Lucas Oliveira', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'lucas-oliveira', name: 'Lucas Oliveira', role: 'Doador', kind: 'approved',
     text: 'Gosto de pensar na doação como um encontro entre pessoas. De um lado, a vontade de ajudar; do outro, alguém que merece respeito e acolhimento.',
   },
   {
-    id: 'juliana-costa-exemplo', name: 'Juliana Costa', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'juliana-costa', name: 'Juliana Costa', role: 'Doador', kind: 'approved',
     text: 'Uma sacola de roupas pode parecer pouca coisa para quem separa. Para mim, ela representa a decisão de olhar com mais atenção para o próximo.',
   },
   {
-    id: 'rafael-souza-exemplo', name: 'Rafael Souza', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'rafael-souza', name: 'Rafael Souza', role: 'Doador', kind: 'approved',
     text: 'A solidariedade fica mais próxima quando a gente percebe que pode ajudar com o que está ao alcance. Não é preciso esperar uma ocasião especial.',
   },
   {
-    id: 'beatriz-rocha-exemplo', name: 'Beatriz Rocha', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'beatriz-rocha', name: 'Beatriz Rocha', role: 'Doador', kind: 'approved',
     text: 'Produtos de higiene fazem parte do cuidado de todos os dias. Lembrar deles na hora de doar é também lembrar da dignidade de quem vai receber.',
   },
   {
-    id: 'gabriel-lima-exemplo', name: 'Gabriel Lima', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'gabriel-lima', name: 'Gabriel Lima', role: 'Doador', kind: 'approved',
     text: 'Compartilhar um pouco do que temos é uma maneira simples de participar da comunidade. Quando esse gesto vira hábito, a solidariedade ganha espaço na rotina.',
   },
   {
-    id: 'fernanda-melo-exemplo', name: 'Fernanda Melo', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'fernanda-melo', name: 'Fernanda Melo', role: 'Doador', kind: 'approved',
     text: 'Separar, conferir e organizar os itens para doação também é uma forma de carinho. Quem recebe merece o mesmo cuidado que teríamos com alguém de casa.',
   },
   {
-    id: 'thiago-ribeiro-exemplo', name: 'Thiago Ribeiro', role: 'Personagem de demonstração', kind: 'illustrative',
+    id: 'thiago-ribeiro', name: 'Thiago Ribeiro', role: 'Doador', kind: 'approved',
     text: 'O que me inspira é a ideia de fazer parte de uma corrente de cuidado. Cada pessoa contribui de um jeito, e todo gesto pode ser um começo.',
   },
 ];

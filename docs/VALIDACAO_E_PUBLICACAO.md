@@ -4,11 +4,11 @@ Este checklist é obrigatório antes de apresentar o site como instituição pú
 
 ## Confirmação do responsável — 21/11/2026
 
-Após ser consultado expressamente sobre autorização das fotografias (incluindo menores), indicadores, depoimento de Roberto Costa, endereço/horário, destinatário PIX e política de privacidade, o responsável respondeu **“autorizou tudo”**. A publicação foi liberada com base nessa declaração; não houve auditoria independente nem recebimento de documentos comprobatórios. Os 13 exemplos fictícios continuam identificados como ilustrativos.
+Após ser consultado expressamente sobre autorização das fotografias (incluindo menores), indicadores, depoimento de Roberto Costa, endereço/horário, destinatário PIX e política de privacidade, o responsável respondeu **“autorizou tudo”**. A publicação foi liberada com base nessa declaração; não houve auditoria independente nem recebimento de documentos comprobatórios. Posteriormente, o responsável confirmou expressamente: “Sim, são doadores reais e aprovaram os textos.”
 
 As pendências institucionais registradas abaixo correspondem à versão anterior a essa confirmação; a declaração acima registra sua resolução pelo responsável. Verificações técnicas pós-deploy e testes em aparelhos físicos permanecem separados.
 
-Revisão posterior nesta data: os 13 exemplos pessoais foram retirados da aplicação pública e substituídos por mensagens editoriais da instituição, sem nomes fictícios ou alegação de que sejam depoimentos de doadores. Roberto Costa permanece como o relato confirmado. Os rascunhos são usados somente na fixture interna de testes.
+Revisão posterior nesta data: após a confirmação expressa acima, o carrossel voltou a apresentar os 14 nomes e textos aprovados, todos como “Doador”. A aprovação é declaração do responsável; não houve auditoria independente nem criação de novos relatos nesta revisão.
 
 ## 1. Validação de informações
 
@@ -18,7 +18,7 @@ Revisão posterior nesta data: os 13 exemplos pessoais foram retirados da aplica
 - [x] Responsável confirmou e-mail, chave PIX e destinatário informado pelo banco; sem transação de teste por este agente.
 - [x] Responsável confirmou os indicadores fornecidos; nenhum período de referência foi inventado e não houve auditoria independente.
 - [x] Depoimento de Roberto Costa confirmado pelo responsável e divulgação autorizada.
-- [x] Os 13 exemplos ilustrativos do carrossel são mantidos claramente identificados como demonstração, sem serem apresentados como doadores reais.
+- [x] Responsável confirmou que os outros 13 nomes são doadores reais e aprovaram os textos publicados.
 - [ ] Revisão ortográfica final por responsável.
 
 ## 2. Fotografias e privacidade
