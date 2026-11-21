@@ -1,0 +1,11 @@
+# Enviar junto com os arquivos React/Vite na raiz do repositório.
+# A branch de produção e a publicação automática continuam definidas no Netlify.
+[build]
+  base = "."
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  # TypeScript e Vite são dependências necessárias à compilação.
+  NPM_FLAGS = "--include=dev"
