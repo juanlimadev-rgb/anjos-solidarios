@@ -1,25 +1,26 @@
-# Revisão dos cartões públicos — 21/11/2026
+# Depoimentos autorizados — 21/11/2026
 
-O responsável solicitou retirar a identificação de personagens de demonstração da versão pública. Os cartões inventados não foram reclassificados como pessoas que efetivamente doaram.
+O responsável confirmou expressamente nesta conversa: **“Sim, são doadores reais e aprovaram os textos.”** A resposta foi dada à pergunta sobre autoria, doação e autorização para publicação dos nomes e textos apresentados. A publicação se baseia nessa declaração; não houve auditoria independente.
 
-## Conteúdo final
+## Conteúdo publicado
 
-- Um relato confirmado: Roberto Costa, identificado como **Doador** e com selo textual **Depoimento**.
-- Treze mensagens editoriais, identificadas como **Mensagem da instituição**, com autoria da marca Anjos Solidários e tema próprio.
-- As mensagens convidam à solidariedade e orientam sobre as formas de doar; não simulam experiências pessoais nem atribuem falas a nomes fictícios.
-- O carrossel mantém 14 cartões, seleção, teclado, deslize, pausa e troca automática. A introdução explica que reúne um relato e mensagens da instituição.
-- Os textos pessoais fictícios anteriores ficam no array `testimonialDrafts` e em uma fixture de testes. Esse array não é importado pela aplicação pública e não aparece no bundle de produção.
+- 14 relatos, incluindo Roberto Costa, Juan Lima, Anne Beatriz, Andressa e os outros dez nomes já apresentados.
+- Todos identificados como **Doador**, com selo **Depoimento**.
+- Os textos elaborados anteriormente como exemplos foram mantidos sem novas alegações, após a confirmação de que foram aprovados pelas pessoas citadas.
+- As 13 mensagens editoriais temporárias foram substituídas pelos nomes e textos aprovados. O array separado de rascunhos foi removido.
+- Logo, fotografias, identidade visual, contatos e PIX foram preservados.
+- O carrossel mantém seleção, teclado, deslize, pausa, troca automática e suporte a movimento reduzido.
 
-## Correção funcional
+## Validação desta revisão
 
-A pausa por hover passou a acompanhar eventos de ponteiro do documento, evitando um estado de hover retido após movimentos e rolagem. Ponteiros de toque não ativam hover. Foco e preferência de movimento reduzido continuam controlando a reprodução.
+- `npm run typecheck`: aprovado.
+- `npm run build`: aprovado.
+- `npm run test:testimonials`: três grupos aprovados, com 14 nomes, identificação de doadores e ausência dos rótulos temporários; dez larguras de 320 a 1920 px e texto a 200% sem overflow.
+- `npm run test:carousel`: sete grupos aprovados, cobrindo seleção, ciclo, foco, temporizador, hover, página oculta, saída da tela, gesto horizontal e movimento reduzido.
+- Nenhum erro de console nas suítes executadas. Capturas em `docs/qa/` (evidência local).
 
-## Verificações
+Arquivos alterados: `src/data/site.ts`, os dois testes de depoimentos, a fixture interna, README e documentação de identidade, validação e esta revisão. O componente e o CSS não precisaram de alterações.
 
-- TypeScript e build de produção aprovados.
-- `npm run test:testimonials`: três grupos da seção pública aprovados, com 14 cartões, ausência de personagens e dez larguras entre 320 e 1920 px; fonte a 200% sem overflow.
-- `npm run test:carousel`: sete grupos da fixture interna aprovados, cobrindo seleção, ciclo, foco, temporizador, hover, página oculta, saída da tela, gesto horizontal e movimento reduzido.
-- Conferência do bundle: ausência dos IDs `juan-lima-exemplo`, `anne-beatriz-exemplo` e do texto “Personagem de demonstração”.
-- A fixture não integra `dist`; é servida apenas no ambiente de desenvolvimento.
+Para conferir localmente: `npm run dev`; abra `http://localhost:5173/#depoimentos`. Com o servidor aberto, execute `npm run test:testimonials` e `npm run test:carousel`.
 
-Arquivos: dados, componente, scripts de teste, fixture, package.json, README e documentação de identidade e validação. Imagens, contatos, PIX e demais informações institucionais não foram alterados nesta revisão.
+Não há pendências de conteúdo para esta alteração após a confirmação expressa do responsável. As limitações gerais de auditoria e testes físicos continuam descritas em `VALIDACAO_E_PUBLICACAO.md`.

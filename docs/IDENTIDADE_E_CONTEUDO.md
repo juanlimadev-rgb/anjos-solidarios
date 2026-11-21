@@ -62,11 +62,9 @@ O texto e a atribuição ficam em `site.testimonial`; a autorização foi regist
 
 ### Carrossel — atualização de 21/11/2026
 
-Revisão para publicação: a página mostra Roberto Costa como “Doador”, conforme confirmação do responsável, e 13 mensagens editoriais identificadas como “Mensagem da instituição”, com autoria da marca. As mensagens são orientações e convites à solidariedade, sem simular experiências pessoais. Os exemplos abaixo foram movidos para `testimonialDrafts` e para uma fixture interna de testes; não aparecem na página nem no bundle público.
+O responsável confirmou expressamente em 21/11/2026: **“Sim, são doadores reais e aprovaram os textos.”** A confirmação abrange os nomes e textos apresentados na pergunta, incluindo Juan Lima, Anne Beatriz, Andressa e os demais integrantes do carrossel. Os textos haviam sido elaborados como exemplos e agora são publicados como falas aprovadas, com base nessa declaração; não houve auditoria independente. Nenhum novo nome ou texto foi acrescentado nesta revisão.
 
-O array `testimonials` usa esse relato como primeiro item (`kind: 'approved'`). A pedido do responsável, há também 13 textos fictícios com personagens ilustrativos: Juan Lima, Anne Beatriz, Andressa e outros dez exemplos. **Esses nomes e falas não comprovam doações nem correspondem a depoimentos reais.** Todos exibem “Exemplo ilustrativo” e “Personagem de demonstração”, além de um aviso na apresentação da seção.
-
-Substituir os exemplos por relatos autênticos, confirmar autoria e autorização antes de marcar um item como `kind: 'approved'`. Não remover os rótulos para fazer um texto fictício parecer real. Não foram adicionadas fotografias de pessoas nem alegações de verificação.
+O array `testimonials` contém 14 itens com `kind: 'approved'` e identificação “Doador”. As mensagens editoriais temporárias foram substituídas pelos nomes e textos aprovados. Não foram adicionadas fotografias de pessoas nem alegações de verificação independente.
 
 ## Fotografias recebidas
 

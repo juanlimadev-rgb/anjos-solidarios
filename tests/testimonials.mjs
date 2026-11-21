@@ -17,14 +17,20 @@ try {
   await section.scrollIntoViewIfNeeded();
   const slides = section.locator('.testimonial-slide');
   const count = await slides.count();
-  await check('Relato confirmado e mensagens institucionais identificados separadamente', async () => {
+  await check('Nomes e relatos autorizados pelo responsável identificados como doadores', async () => {
     assert.ok(count >= 1);
     if (process.env.EXPECTED_TESTIMONIALS) assert.equal(count, Number(process.env.EXPECTED_TESTIMONIALS));
     assert.match(await section.textContent(), /Roberto Costa/);
     assert.doesNotMatch(await section.textContent(), /Personagem de demonstração|Exemplo ilustrativo|autorização pendente/);
     assert.equal(await slides.first().locator('.testimonial-kind').textContent(), 'Depoimento');
-    for (const slide of (await slides.all()).slice(1)) assert.equal(await slide.locator('.testimonial-kind').textContent(), 'Mensagem da instituição');
-    assert.doesNotMatch(await section.textContent(), /Juan Lima|Anne Beatriz|Andressa|Mariana Alves/);
+    for (const slide of await slides.all()) {
+      assert.equal(await slide.locator('.testimonial-kind').textContent(), 'Depoimento');
+      assert.equal(await slide.locator('footer small').textContent(), 'Doador');
+    }
+    for (const name of ['Juan Lima', 'Anne Beatriz', 'Andressa', 'Mariana Alves', 'Pedro Henrique', 'Camila Santos', 'Lucas Oliveira', 'Juliana Costa', 'Rafael Souza', 'Beatriz Rocha', 'Gabriel Lima', 'Fernanda Melo', 'Thiago Ribeiro']) {
+      assert.equal(await slides.locator('footer strong').filter({ hasText: new RegExp('^' + name + '$') }).count(), 1);
+    }
+    assert.doesNotMatch(await section.textContent(), /Mensagem da instituição/);
     assert.equal(await section.locator('.testimonial-slide[aria-hidden="false"]').count(), 1);
     if (count === 1) assert.equal(await section.locator('.testimonial-controls').count(), 0);
   });

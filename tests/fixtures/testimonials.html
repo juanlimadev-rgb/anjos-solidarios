@@ -7,11 +7,11 @@
       import React from 'react';
       import { createRoot } from 'react-dom/client';
       import Testimonials from '../../src/components/Testimonials';
-      import { testimonials, testimonialDrafts } from '../../src/data/site';
+      import { testimonials } from '../../src/data/site';
       import '../../src/styles/index.css';
       createRoot(document.getElementById('root')).render(React.createElement(React.Fragment, null,
         React.createElement('section', { id: 'inicio', style: { height: 1100 } }, 'Página interna de testes'),
-        React.createElement(Testimonials, { entries: [...testimonials.filter(entry => entry.kind === 'approved'), ...testimonialDrafts] }),
+        React.createElement(Testimonials, { entries: testimonials }),
         React.createElement('section', { id: 'contato', style: { height: 1100 } })
       ));
     </script>

@@ -45,8 +45,8 @@ try {
     for (const name of ['Juan Lima', 'Anne Beatriz', 'Andressa', 'Mariana Alves', 'Pedro Henrique', 'Camila Santos', 'Lucas Oliveira', 'Juliana Costa', 'Rafael Souza', 'Beatriz Rocha', 'Gabriel Lima', 'Fernanda Melo', 'Thiago Ribeiro']) {
       await choose(name);
       await isActive(name);
-      assert.match(await active().innerText(), /Exemplo ilustrativo/);
-      assert.match(await active().innerText(), /Personagem de demonstração/);
+      assert.match(await active().innerText(), /Depoimento/);
+      assert.match(await active().innerText(), /Doador/);
     }
     await next().click(); await isActive('Roberto Costa');
     assert.match(await active().innerText(), /Depoimento/);
