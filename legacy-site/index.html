@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjos Solidários Pró-Esperança</title>
+
+    <meta name="description" content="Doe roupas, alimentos, brinquedos e itens de higiene para ajudar famílias atendidas pela Anjos Solidários Pró-Esperança.">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Link para o seu CSS customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- HEADER -->
+    <header id="home" class="shadow-md sticky top-0 bg-white z-50">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+
+            <div class="flex items-center gap-3">
+                <img src="assets/images/logo (4).png" alt="Logo" class="h-12">
+                <span class="font-bold text-green-700">
+                    Anjos Solidários
+                </span>
+            </div>
+
+            <div class="hidden md:flex gap-6">
+                <a href="#quem-somos">Quem Somos</a>
+                <a href="#o-que-doar">O Que Doar</a>
+                <a href="#como-doar">Como Doar</a>
+                <a href="#contato">Contato</a>
+            </div>
+
+            <a href="#como-doar" class="bg-green-700 text-white px-5 py-2 rounded-lg">
+                Quero Doar
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="py-24 px-6 text-center relative overflow-hidden">
+
+       <img src="assets/images/logo (4).png" alt="Logo" class="h-50 w-64 mx-auto mb-14 -mt-10 object-contain">
+        <h1 class="text-5xl font-bold text-green-700 mb-4">
+            Unidos pelo laço da caridade
+        </h1>
+
+        <p class="text-xl mb-6">
+            Quem não vive para servir não serve para viver.
+        </p>
+
+        <p class="max-w-3xl mx-auto mb-8">
+            Sua doação pode transformar vidas. Ajude famílias da nossa comunidade
+            com roupas, alimentos, brinquedos e itens de higiene.
+        </p>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+            <a href="#como-doar" class="bg-green-700 text-white px-6 py-3 rounded-lg">
+                Fazer Doação
+            </a>
+
+            <a href="#contato" class="border border-green-700 text-green-700 px-6 py-3 rounded-lg">
+                Falar Conosco
+            </a>
+        </div>
+
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="py-20 px-6 bg-gray-100">
+
+        <h2 class="text-3xl font-bold text-center mb-10">
+            Galeria
+        </h2>
+
+        <div id="carousel" class="max-w-5xl mx-auto">
+
+            <div class="carousel-slide active">
+                <img src="assets/images/doação1.jpeg" alt="Doação 1">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="assets/images/doação 2.jpeg" alt="Doação 2">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="assets/images/doação 3.jpeg" alt="Doação 3">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="assets/images/doação 4.jpeg" alt="Doação 4">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="assets/images/doação 5.jpeg" alt="Doação 5">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="assets/images/doação 6.jpeg" alt="Doação 6">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="assets/images/doação 7.jpeg" alt="Doação 7">
+            </div>
+
+            <button class="carousel-btn carousel-prev" id="btnPrev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <button class="carousel-btn carousel-next" id="btnNext">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="quem-somos" class="py-20 px-6">
+
+        <div class="max-w-5xl mx-auto text-center">
+
+            <h2 class="text-3xl font-bold text-green-700 mb-6">
+                Quem Somos
+            </h2>
+
+           <p>
+            A Anjos Solidários Pró-Esperança é uma organização sem fins lucrativos 
+            fundada com um único propósito: levar dignidade e esperança a famílias 
+            em situação de vulnerabilidade. Atuamos na arrecadação e distribuição 
+            de doações de roupas, alimentos, brinquedos e itens de higiene, 
+            conectando a generosidade de quem doa ao sorriso de quem recebe. 
+            Acreditamos que pequenos gestos transformam grandes realidades — 
+            e que juntos, somos mais fortes.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- O QUE DOAR -->
+    <section id="o-que-doar" class="py-20 px-6 bg-gray-100">
+
+        <h2 class="text-3xl font-bold text-center mb-12">
+            O Que Doar
+        </h2>
+
+        <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+            <div class="shadow-lg p-6 rounded-lg text-center">
+                <i class="fa-solid fa-shirt text-4xl text-green-700 mb-4"></i>
+                <h3 class="font-bold">Vestuário</h3>
+                <p>Roupas, calçados e cobertores.</p>
+            </div>
+
+            <div class="shadow-lg p-6 rounded-lg text-center">
+                <i class="fa-solid fa-box-open text-4xl text-green-700 mb-4"></i>
+                <h3 class="font-bold">Alimentos</h3>
+                <p>Cestas básicas e não perecíveis.</p>
+            </div>
+
+            <div class="shadow-lg p-6 rounded-lg text-center">
+                <i class="fa-solid fa-baby text-4xl text-green-700 mb-4"></i>
+                <h3 class="font-bold">Infantil</h3>
+                <p>Brinquedos e fraldas.</p>
+            </div>
+
+            <div class="shadow-lg p-6 rounded-lg text-center">
+                <i class="fa-solid fa-pump-soap text-4xl text-green-700 mb-4"></i>
+                <h3 class="font-bold">Higiene</h3>
+                <p>Produtos de higiene pessoal.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- IMPACTO -->
+    <section id="impacto" class="py-20 px-6">
+
+        <h2 class="text-3xl font-bold text-center mb-10">
+            Calculadora de Impacto
+        </h2>
+
+        <div class="max-w-xl mx-auto">
+
+            <select id="tipoItem" class="w-full border p-3 rounded mb-4">
+                <option>Roupas</option>
+                <option>Alimentos</option>
+                <option>Brinquedos</option>
+                <option>Higiene</option>
+            </select>
+
+            <input type="number" id="quantidade" placeholder="Quantidade" class="w-full border p-3 rounded mb-4">
+
+            <div id="resultadoImpacto" class="bg-green-100 p-4 rounded text-center">
+                Informe uma quantidade.
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMO DOAR -->
+    <section id="como-doar" class="py-20 px-6 bg-gray-100">
+
+        <h2 class="text-3xl font-bold text-center mb-12">
+            Como Doar
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+            <div class="bg-white shadow-lg p-8 rounded-lg flex flex-col justify-between">
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        Entrega Presencial
+                    </h3>
+                    <p class="font-semibold text-gray-700">Travessa Pedro Amado, 09</p> 
+                    <p class="font-semibold text-gray-700">Divinea</p> 
+                    <p class="text-gray-600">São Cristóvão - SE</p>
+                    <p class="text-gray-500 text-sm mt-2">Segunda a Sexta - 08h às 17h</p>
+                </div>
+
+                <div class="mt-6">
+                    <a href="https://maps.app.goo.gl/VAJY2NNCzR5sp1Zu8" 
+                       target="_blank" 
+                       class="inline-block bg-green-700 text-white px-5 py-2.5 rounded hover:bg-green-800 transition shadow text-center">
+                        Ver Rotas no Maps
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="bg-white shadow-lg p-8 rounded-lg">
+
+                <h3 class="text-2xl font-bold mb-4">
+                    Solicitar Coleta
+                </h3>
+
+                <form id="formDoacao">
+
+                    <input type="text" id="inputNome" placeholder="Nome" class="w-full border p-3 rounded mb-3" required>
+
+                    <input type="tel" id="inputTelefone" placeholder="Telefone" class="w-full border p-3 rounded mb-3" required>
+
+                    <input type="text" id="inputEndereco" placeholder="Endereço" class="w-full border p-3 rounded mb-3" required>
+
+                    <input type="text" id="inputCidade" placeholder="Cidade" class="w-full border p-3 rounded mb-3" required>
+
+                    <textarea id="inputItens" placeholder="Itens para doação" class="w-full border p-3 rounded mb-3" required></textarea>
+
+                    <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded w-full md:w-auto">
+                        Solicitar Retirada
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PIX -->
+    <section id="pix" class="py-20 px-6">
+
+        <div class="max-w-3xl mx-auto text-center">
+
+            <h2 class="text-3xl font-bold mb-6">
+                Apoie via PIX
+            </h2>
+
+            <p id="chavePix" class="mb-4">
+                anjossolidarios.1010@gmail.com
+            </p>
+
+            <button id="copiarPix" class="bg-green-700 text-white px-6 py-3 rounded">
+                Copiar Chave PIX
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- TRANSPARÊNCIA -->
+    <section id="transparencia" class="py-20 px-6 bg-gray-100">
+
+        <h2 class="text-3xl font-bold text-center mb-12">
+            Transparência
+        </h2>
+
+        <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
+
+            <div>
+                <h3 class="text-4xl font-bold text-green-700">150+</h3>
+                <p>Famílias Ajudadas</p>
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-green-700">3t</h3>
+                <p>Alimentos Arrecadados</p>
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-green-700">500+</h3>
+                <p>Doações Recebidas</p>
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-green-700">80+</h3>
+                <p>Voluntários</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DEPOIMENTOS -->
+<section id="depoimentos" class="py-20 px-6">
+
+    <h2 class="text-3xl font-bold text-center text-green-700 mb-2">
+        Depoimentos
+    </h2>
+    <p class="text-center text-gray-500 mb-10">O que dizem quem viveu essa experiência</p>
+
+    <div class="relative max-w-2xl mx-auto">
+
+        <div id="carrosselDepoimentos" class="overflow-hidden rounded-lg">
+
+            <div class="depoimento-slide shadow-lg p-8 rounded-lg border-t-4 border-green-700">
+                <p class="text-gray-600 italic mb-4">"A iniciativa mudou nossa realidade. Recebemos doações que fizeram toda a diferença para nossa família."</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">M</div>
+                    <div>
+                        <p class="font-bold text-sm">Maria Silva</p>
+                        <p class="text-xs text-gray-400">Beneficiária</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-slide shadow-lg p-8 rounded-lg border-t-4 border-green-700">
+                <p class="text-gray-600 italic mb-4">"Excelente trabalho social. Ver o sorriso das crianças ao receberem os brinquedos não tem preço."</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">J</div>
+                    <div>
+                        <p class="font-bold text-sm">João Santos</p>
+                        <p class="text-xs text-gray-400">Voluntário</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-slide shadow-lg p-8 rounded-lg border-t-4 border-green-700">
+                <p class="text-gray-600 italic mb-4">"Muito organizada e acolhedora. Doe com confiança, cada item chega a quem realmente precisa."</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">A</div>
+                    <div>
+                        <p class="font-bold text-sm">Ana Oliveira</p>
+                        <p class="text-xs text-gray-400">Doadora</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-slide shadow-lg p-8 rounded-lg border-t-4 border-green-700">
+                <p class="text-gray-600 italic mb-4">"Fui voluntária numa das distribuições e fiquei emocionada. Uma organização que realmente faz a diferença."</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">C</div>
+                    <div>
+                        <p class="font-bold text-sm">Carla Mendes</p>
+                        <p class="text-xs text-gray-400">Voluntária</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-slide shadow-lg p-8 rounded-lg border-t-4 border-green-700">
+                <p class="text-gray-600 italic mb-4">"Doei roupas que não usava mais e soube que foram para famílias que precisavam. Gratidão por esse trabalho!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">R</div>
+                    <div>
+                        <p class="font-bold text-sm">Roberto Costa</p>
+                        <p class="text-xs text-gray-400">Doador</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-slide shadow-lg p-8 rounded-lg border-t-4 border-green-700">
+                <p class="text-gray-600 italic mb-4">"Uma iniciativa linda que une a comunidade. Cada doação é tratada com muito cuidado e carinho."</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">P</div>
+                    <div>
+                        <p class="font-bold text-sm">Patricia Lima</p>
+                        <p class="text-xs text-gray-400">Apoiadora</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botões -->
+        <button id="depPrev" class="carousel-btn" style="left: -20px;">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="depNext" class="carousel-btn" style="right: -20px;">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Dots -->
+        <div id="depDots" class="carousel-dots mt-6"></div>
+
+    </div>
+
+</section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-20 px-6 bg-gray-100">
+
+      <div class="text-center">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Contato
+    </h2>
+    <p class="text-gray-500 mb-10">Fale conosco pelos canais abaixo</p>
+
+    <div class="flex flex-col items-center gap-4 max-w-sm mx-auto">
+
+        <a href="https://wa.me/5579998078987" target="_blank" class="flex items-center gap-4 bg-white shadow-md rounded-lg px-6 py-4 w-full hover:shadow-lg transition">
+            <i class="fa-brands fa-whatsapp text-3xl text-green-500"></i>
+            <div class="text-left">
+                <p class="text-xs text-gray-400">WhatsApp</p>
+                <p class="font-bold text-gray-700">(79) 99807-8987</p>
+            </div>
+        </a>
+
+        <a href="mailto:anjossolidarios.1010@gmail.com" class="flex items-center gap-4 bg-white shadow-md rounded-lg px-6 py-4 w-full hover:shadow-lg transition">
+            <i class="fa-solid fa-envelope text-3xl text-red-400"></i>
+            <div class="text-left">
+                <p class="text-xs text-gray-400">Email</p>
+                <p class="font-bold text-gray-700">anjossolidarios.1010@gmail.com</p>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/anjos_solidarios10/" target="_blank" class="flex items-center gap-4 bg-white shadow-md rounded-lg px-6 py-4 w-full hover:shadow-lg transition">
+            <i class="fa-brands fa-instagram text-3xl text-pink-500"></i>
+            <div class="text-left">
+                <p class="text-xs text-gray-400">Instagram</p>
+                <p class="font-bold text-gray-700">@anjos_solidarios10</p>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-green-800 text-white text-center p-6">
+        <p>
+            © 2026 Anjos Solidários Pró-Esperança
+        </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anjossolidarios.netlify.app/sitemap.xml
