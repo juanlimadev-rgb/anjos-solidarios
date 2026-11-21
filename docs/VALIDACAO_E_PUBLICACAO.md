@@ -8,6 +8,8 @@ Após ser consultado expressamente sobre autorização das fotografias (incluind
 
 As pendências institucionais registradas abaixo correspondem à versão anterior a essa confirmação; a declaração acima registra sua resolução pelo responsável. Verificações técnicas pós-deploy e testes em aparelhos físicos permanecem separados.
 
+Revisão posterior nesta data: os 13 exemplos pessoais foram retirados da aplicação pública e substituídos por mensagens editoriais da instituição, sem nomes fictícios ou alegação de que sejam depoimentos de doadores. Roberto Costa permanece como o relato confirmado. Os rascunhos são usados somente na fixture interna de testes.
+
 ## 1. Validação de informações
 
 - [x] Responsável confirma nome oficial e uso da marca.

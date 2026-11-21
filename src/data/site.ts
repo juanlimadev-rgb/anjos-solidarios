@@ -31,14 +31,32 @@ export type Testimonial = {
   name: string;
   role: string;
   text: string;
-  kind: 'provided' | 'illustrative' | 'approved';
+  kind: 'provided' | 'illustrative' | 'approved' | 'message';
 };
 
-// Textos ilustrativos solicitados em 21/11/2026. Não são relatos reais nem
-// confirmação de que pessoas com esses nomes doaram. Manter a identificação
-// visível até substituir por falas reais e autorizações documentadas.
-export const testimonials: readonly Testimonial[] = [
+// Relatos confirmados e mensagens editoriais são identificados separadamente.
+export const testimonials: readonly (Testimonial & { kind: 'approved' | 'message' })[] = [
   { id: 'roberto-costa', ...site.testimonial, kind: 'approved' },
+  ...[
+    { id: 'mensagem-roupas', role: 'Roupas que acolhem', text: 'Roupas em bom estado podem ganhar um novo destino. Separar o que já não é usado é uma forma simples de começar a ajudar.' },
+    { id: 'mensagem-generosidade', role: 'Generosidade no dia a dia', text: 'Uma pequena contribuição pode se somar a outras. A solidariedade começa quando a vontade de ajudar encontra espaço na rotina.' },
+    { id: 'mensagem-brinquedos', role: 'Cuidado com a infância', text: 'Brinquedos em bom estado e fraldas estão entre as formas de contribuir. Escolher os itens com atenção também é um gesto de carinho.' },
+    { id: 'mensagem-armario', role: 'Um novo destino', text: 'Organizar o armário pode ser o começo de uma boa ação. Vale olhar para cada peça e pensar em como ela ainda pode ser útil.' },
+    { id: 'mensagem-alimentos', role: 'Alimentos para compartilhar', text: 'Cestas básicas e alimentos não perecíveis fazem parte das doações recebidas. Antes de entregar, confira a validade e as condições da embalagem.' },
+    { id: 'mensagem-familia', role: 'Solidariedade em família', text: 'Conversar sobre doação em casa é uma oportunidade de cultivar o cuidado com o próximo. Pequenos gestos podem fazer parte dessa conversa.' },
+    { id: 'mensagem-respeito', role: 'Respeito em cada gesto', text: 'Toda pessoa merece dignidade e acolhimento. A doação é uma maneira de aproximar a generosidade de quem ajuda das necessidades da comunidade.' },
+    { id: 'mensagem-carinho', role: 'Atenção aos detalhes', text: 'Separar uma doação com carinho também significa conferir o estado dos itens. Quem recebe merece o mesmo cuidado que teríamos com alguém de casa.' },
+    { id: 'mensagem-comeco', role: 'Um primeiro passo', text: 'Não é preciso esperar uma ocasião especial para ajudar. Roupas, alimentos, brinquedos e produtos de higiene são possibilidades para começar.' },
+    { id: 'mensagem-higiene', role: 'Cuidado e dignidade', text: 'Produtos de higiene pessoal fazem parte do cuidado diário. Lembrar deles na hora de doar também é olhar com atenção para necessidades essenciais.' },
+    { id: 'mensagem-comunidade', role: 'Laços com a comunidade', text: 'Compartilhar um pouco do que temos é uma forma de participar da comunidade. Cada pessoa pode encontrar um jeito de contribuir.' },
+    { id: 'mensagem-organizacao', role: 'Doar com cuidado', text: 'Organize os itens e conte à equipe o que deseja doar. Uma conversa pelos canais oficiais ajuda a combinar os próximos passos com clareza.' },
+    { id: 'mensagem-corrente', role: 'Uma corrente de esperança', text: 'Cada gesto pode ser um começo. Unidos pelo laço da caridade, seguimos conectando generosidade, cuidado e esperança.' },
+  ].map(message => ({ ...message, name: site.brand, kind: 'message' as const })),
+];
+
+// Rascunhos ilustrativos: não são doadores ou relatos comprovados.
+// Não são importados pela página pública; servem à prévia interna e aos testes.
+export const testimonialDrafts: readonly (Testimonial & { kind: 'illustrative' })[] = [
   {
     id: 'juan-lima-exemplo', name: 'Juan Lima', role: 'Personagem de demonstração', kind: 'illustrative',
     text: 'Separei roupas em bom estado para doar. É um jeito simples de colocar o que já temos a serviço de quem precisa.',
