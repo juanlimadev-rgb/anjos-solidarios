@@ -58,6 +58,7 @@ try {
       const photo = await page.locator('.hero-visual').boundingBox();
       if (width >= 768) assert.ok(hero.x + hero.width <= photo.x + 1, 'Hero sobreposto');
       assert.equal(await page.locator('.desktop-nav').isVisible(), width > 1100);
+      await page.waitForFunction(() => [...document.images].every(image => image.complete && image.naturalWidth > 0), undefined, { timeout: 20000 });
       const broken = await page.locator('img').evaluateAll(nodes => nodes.filter(i => !i.complete || !i.naturalWidth).map(i => i.src));
       assert.deepEqual(broken, []);
       const file = 'layout-' + width + '.png';

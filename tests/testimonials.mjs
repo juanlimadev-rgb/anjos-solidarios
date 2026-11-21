@@ -21,6 +21,8 @@ const isActive = async name => { await page.clock.runFor(400); assert.match(awai
 const waitForRotation = async value => {
   for (let attempt = 0; attempt < 40; attempt++) {
     await page.clock.runFor(50);
+    // IntersectionObserver depende também dos frames reais do navegador/CDN.
+    await page.waitForTimeout(50);
     if (await carousel.locator('.testimonial-stage').getAttribute('aria-live') === value) return;
   }
   assert.equal(await carousel.locator('.testimonial-stage').getAttribute('aria-live'), value);
@@ -93,6 +95,7 @@ try {
   await check('Pausa fora da tela e com página oculta', async () => {
     await carousel.getByRole('button', { name: 'Iniciar troca automática', exact: true }).click();
     await page.mouse.move(0, 0);
+    await page.evaluate(() => document.querySelector('#depoimentos').scrollIntoView({ block: 'center', behavior: 'instant' }));
     await waitForRotation('off');
     await page.evaluate(() => { document.querySelector('#inicio').scrollIntoView({ behavior: 'instant' }); });
     await waitForRotation('polite');
