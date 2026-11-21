@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test:e2e": "node tests/e2e.mjs",
     "test:audit": "node tests/audit.mjs",
-    "test:testimonials": "node tests/testimonials.mjs"
+    "test:testimonials": "node tests/testimonials.mjs",
+    "test:carousel": "node tests/testimonials-carousel.mjs"
   },
   "dependencies": {
     "lucide-react": "0.474.0",

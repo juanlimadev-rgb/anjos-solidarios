@@ -25,14 +25,22 @@ export default function Testimonials({ entries = testimonials }: { entries?: rea
       if (media.matches) setPlaying(false);
     };
     const onVisibility = () => setPageVisible(!document.hidden);
+    const onPointerMove = (event: PointerEvent) => {
+      if (event.pointerType === 'mouse') setHovered(!!section.current?.contains(event.target as Node));
+    };
+    const onPointerOut = (event: PointerEvent) => { if (!event.relatedTarget) setHovered(false); };
     const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: .25 });
     if (section.current) observer.observe(section.current);
     media.addEventListener('change', onMotion);
     document.addEventListener('visibilitychange', onVisibility);
+    document.addEventListener('pointermove', onPointerMove, { passive: true });
+    document.addEventListener('pointerout', onPointerOut, { passive: true });
     return () => {
       observer.disconnect();
       media.removeEventListener('change', onMotion);
       document.removeEventListener('visibilitychange', onVisibility);
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerout', onPointerOut);
     };
   }, []);
 
@@ -52,7 +60,6 @@ export default function Testimonials({ entries = testimonials }: { entries?: rea
   return (
     <section ref={section} id="depoimentos" tabIndex={-1} className="testimonial-section section"
       aria-labelledby="testimonial-heading" aria-roledescription="carrossel"
-      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setPlaying(false)}
       onKeyDown={event => {
         if ((event.target as Element).closest('select')) return;
@@ -65,7 +72,7 @@ export default function Testimonials({ entries = testimonials }: { entries?: rea
         <div className="testimonial-left reveal">
           <span className="eyebrow"><span className="eyebrow-line" />UMA CORRENTE DE CUIDADO</span>
           <h2 id="testimonial-heading">Cada gesto deixa <em>uma marca.</em></h2>
-          <p>A generosidade se multiplica quando as pessoas compartilham suas experiências.</p>
+          <p>{entries.some(entry => entry.kind === 'message') ? 'Um relato de quem doa e mensagens da instituição para inspirar novos gestos de solidariedade.' : 'A generosidade se multiplica quando as pessoas compartilham suas experiências.'}</p>
           {entries.some(entry => entry.kind === 'illustrative') && <p className="testimonial-demo-note">Os textos identificados como ilustrativos são exemplos, não relatos reais de doadores.</p>}
           <a className="text-link" href="#contato">Compartilhe sua experiência</a>
         </div>
@@ -85,8 +92,8 @@ export default function Testimonials({ entries = testimonials }: { entries?: rea
             }}>
             {entries.map((entry, index) => (
               <div key={entry.id} className={`testimonial-slide ${index === activeIndex ? 'is-active' : ''}`}
-                role="group" aria-roledescription="depoimento" aria-label={`${index + 1} de ${count}`} aria-hidden={index !== activeIndex}>
-                <span className="testimonial-kind">{entry.kind === 'illustrative' ? 'Exemplo ilustrativo' : entry.kind === 'provided' ? 'Relato fornecido · autorização pendente' : 'Depoimento'}</span>
+                role="group" aria-roledescription={entry.kind === 'message' ? 'mensagem' : 'depoimento'} aria-label={`${index + 1} de ${count}`} aria-hidden={index !== activeIndex}>
+                <span className="testimonial-kind">{entry.kind === 'message' ? 'Mensagem da instituição' : entry.kind === 'illustrative' ? 'Exemplo ilustrativo' : entry.kind === 'provided' ? 'Relato fornecido · autorização pendente' : 'Depoimento'}</span>
                 <blockquote className="testimonial-quote">
                   <span className="testimonial-quotes" aria-hidden="true">“</span>
                   <p>{entry.text}</p>
@@ -102,7 +109,7 @@ export default function Testimonials({ entries = testimonials }: { entries?: rea
             {count > 5 ? <label className="testimonial-picker">
               <span aria-hidden="true">{String(activeIndex + 1).padStart(2, '0')} <span>/ {String(count).padStart(2, '0')}</span><ChevronDown size={15} /></span>
               <select aria-label="Escolher depoimento" aria-controls="testimonial-slides" value={activeIndex} onChange={event => select(Number(event.target.value))}>
-                {entries.map((entry, index) => <option key={entry.id} value={index}>{index + 1}. {entry.name}{entry.kind === 'illustrative' ? ' — ilustrativo' : ''}</option>)}
+                {entries.map((entry, index) => <option key={entry.id} value={index}>{index + 1}. {entry.kind === 'message' ? entry.role : entry.name}{entry.kind === 'illustrative' ? ' — ilustrativo' : ''}</option>)}
               </select>
             </label> : <><div className="testimonial-pagination" role="group" aria-label="Escolher depoimento">
               {entries.map((entry, index) => <button key={entry.id} type="button" className="testimonial-dot"

@@ -1,5 +1,7 @@
 # Carrossel de depoimentos — 21/11/2026
 
+Registro da primeira implementação. A revisão para a página pública mantém 14 cartões, com um depoimento confirmado e 13 mensagens editoriais, conforme [CORRECAO_DEPOIMENTOS.md](CORRECAO_DEPOIMENTOS.md). Os exemplos pessoais descritos abaixo foram retirados do bundle público e preservados somente como rascunhos e fixture interna.
+
 ## Alteração
 
 Substituída a citação única por um carrossel editorial com 14 itens: o relato fornecido de Roberto Costa, ainda pendente de autorização, e 13 exemplos fictícios solicitados pelo responsável. Juan Lima, Anne Beatriz e Andressa foram os primeiros nomes sugeridos; outros dez personagens ilustrativos completam a prévia. Todos os exemplos estão identificados na interface como **“Exemplo ilustrativo”** e **“Personagem de demonstração”**, com um aviso na introdução. Não representam confirmação de doação, autoria real ou autorização de pessoas com esses nomes.

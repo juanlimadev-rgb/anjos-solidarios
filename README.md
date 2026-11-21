@@ -2,11 +2,11 @@
 
 **Site institucional responsivo** com identidade verde e rosa antigo, fotos reais das ações, galeria, planejador de doações, contato e solicitação de coleta via WhatsApp.
 
-Em 21/11/2026, o responsável confirmou as autorizações das imagens e os dados institucionais para publicação. Os indicadores são fornecidos pela instituição; o carrossel mantém 13 exemplos claramente identificados como ilustrativos. A privacidade e o fluxo do formulário são explicados no rodapé. O endereço oficial é `https://anjossolidarios.netlify.app/`.
+Em 21/11/2026, o responsável confirmou as autorizações das imagens e os dados institucionais para publicação. Os indicadores são fornecidos pela instituição; o carrossel público reúne o relato autorizado de Roberto Costa (“Doador”) e 13 mensagens editoriais da instituição, sem atribuí-las a pessoas fictícias. A privacidade e o fluxo do formulário são explicados no rodapé. O endereço oficial é `https://anjossolidarios.netlify.app/`.
 
 Refinamento implementado em **20/11/2026**: composição editorial, logo completa oficial, tipografia responsiva, contraste de texto revisado, formulário acessível, planejador com validação de inteiros e galeria com diálogo nativo. Nenhuma publicação foi realizada.
 
-Em **21/11/2026**, a seção de depoimentos recebeu um carrossel com 14 itens: o relato fornecido de Roberto Costa e 13 exemplos ilustrativos solicitados pelo responsável. Os exemplos são identificados na interface e não devem ser apresentados como relatos autênticos. Troca automática a cada nove segundos, pausa, seleção compacta, teclado, deslize e movimento reduzido. Dados em `testimonials`, no arquivo `src/data/site.ts`; componente em `src/components/Testimonials.tsx`. Execute `npm run test:testimonials` com o servidor aberto para testar esse fluxo.
+Em **21/11/2026**, a seção recebeu um carrossel com 14 itens, posteriormente revisado para separar depoimento real de mensagens da instituição. Troca automática a cada nove segundos, pausa, seleção compacta, teclado, deslize e movimento reduzido. Dados públicos em `testimonials`, no arquivo `src/data/site.ts`; componente em `src/components/Testimonials.tsx`. Os antigos exemplos pessoais ficam em `testimonialDrafts`, sem importação pela aplicação pública. Execute `npm run test:testimonials` para a seção publicada; `npm run test:carousel` verifica os controles com uma fixture interna em um servidor `npm run dev`.
 
 > **Importante:** a pasta foi criada a partir das informações fornecidas pelo solicitante, sem receber o código do site anterior. Ela contém uma base React/TypeScript/Vite pronta para ser aberta no Codex e refinada. Não é uma versão migrada nem auditada do projeto antigo.
 
